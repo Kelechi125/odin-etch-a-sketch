@@ -6,12 +6,12 @@ const createGrid = () => {
         rowCell.classList.add("rowDiv");
         //rowCell.style.height = "50px";
         //rowCell.style.width = "50px";
-        rowCell.setAttribute("style", "border: 1px solid black; display: flex; gap: 1px; align-content: stretch; flex: 1");
+        rowCell.setAttribute("style", "border: 0.25px solid black; display: flex; gap: 1px; align-content: stretch; flex: 1;");
 
         for (let j = 0; j < 16; j++) {
             const columnCell = document.createElement("div");
             columnCell.classList.add("columnDiv");
-            columnCell.setAttribute("style", "border: 1px solid black; flex: 1;");
+            columnCell.setAttribute("style", "border: 0.25px solid black; flex: 1;");
             rowCell.appendChild(columnCell);
             }
 
