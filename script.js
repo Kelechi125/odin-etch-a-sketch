@@ -10,13 +10,20 @@ const createGrid = () => {
 
         for (let j = 0; j < 16; j++) {
             const columnCell = document.createElement("div");
-            columnCell.classList.add("columnDiv");
+            columnCell.classList.add("cell");
             columnCell.setAttribute("style", "border: 0.25px solid black; flex: 1;");
             row.appendChild(columnCell);
             }
 
             gridContainer.appendChild(row);
         }
+        return;
     }
 
 createGrid();
+
+const cell = document.querySelector("#cell");
+
+cell.addEventListener("mouseover", () => {
+    cell.style.backgroundColor = "gray";
+})
