@@ -6,7 +6,7 @@ const createGrid = () => {
         row.classList.add("rowDiv");
         //rowCell.style.height = "50px";
         //rowCell.style.width = "50px";
-        rowCell.setAttribute("style", "border: 0.25px solid black; display: flex; gap: 1px; align-content: stretch; flex: 1;");
+        row.setAttribute("style", "border: 0.25px solid black; display: flex; gap: 1px; align-content: stretch; flex: 1;");
 
         for (let j = 0; j < 16; j++) {
             const columnCell = document.createElement("div");
@@ -16,14 +16,25 @@ const createGrid = () => {
             }
 
             gridContainer.appendChild(row);
+
         }
-        return;
+        //return;
     }
 
 createGrid();
 
-const cell = document.querySelector("#cell");
 
-cell.addEventListener("mouseover", () => {
-    cell.style.backgroundColor = "gray";
+
+const myCells = document.querySelectorAll(".cell");
+
+myCells.forEach(cell => {
+    cell.classList.add(".hover");
 })
+
+myCells.forEach(cell => {
+    cell.addEventListener("mouseover", event => {
+        event.target.classList.toggle("hover");
+    })
+})
+
+
