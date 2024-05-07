@@ -37,4 +37,21 @@ myCells.forEach(cell => {
     })
 })
 
+const myButton = document.querySelector("#myButton");
 
+//When button is clicked
+//A prompt window pops up requesting a numerical input
+//Check if the input is a number
+//Clear the current grid
+//Dimension of grid much be 960 px wide
+//Create a new grid based on the number inputted
+
+myButton.addEventListener("click", event => {
+    const userInput = prompt("Enter a number:");
+
+    if (typeof userInput !== "number") {
+        alert("Please enter a number!");
+    }
+
+    
+})
