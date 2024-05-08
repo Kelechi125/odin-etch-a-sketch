@@ -29,3 +29,12 @@ button {
     box-shadow: 3px 3px black;
     padding: 4px 7px;
 }
+
+button:hover {
+    background-color: darkgray;
+}
+
+button:active {
+    background-color: darkgray;
+    transform: translateX(4px) translateY(4px);
+}
