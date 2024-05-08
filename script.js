@@ -49,9 +49,9 @@ const myButton = document.querySelector("#myButton");
 myButton.addEventListener("click", () => {
     let userInput = prompt("Enter a number:");
 
-    if (isNaN(Number(userInput))) {
-        alert("Not a number! Please try again.");
-    } else if (!isNaN(Number(userInput))) {
+    if (isNaN(Number(userInput)) || Number(userInput > 100)) {
+        alert("Please try again.");
+    } else if (!isNaN(Number(userInput)) && Number(userInput) > 0 && Number(userInput) < 100) {
         function clearContainer() {
             gridContainer.innerHTML = "";
         }
@@ -74,6 +74,18 @@ myButton.addEventListener("click", () => {
                 gridContainer.appendChild(row);
     
             }
+
+            const myCells = document.querySelectorAll(".cell");
+
+            myCells.forEach(cell => {
+                cell.classList.add(".hover");
+            })
+
+            myCells.forEach(cell => {
+                cell.addEventListener("mouseover", event => {
+                    event.target.classList.add("hover");
+                })
+            })
     }
     
 })
