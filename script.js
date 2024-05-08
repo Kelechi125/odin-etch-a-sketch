@@ -46,35 +46,29 @@ const myButton = document.querySelector("#myButton");
 //Dimension of grid much be 960px wide
 //Create a new grid based on the number inputted
 
-myButton.addEventListener("click", event => {
-    const userInput = prompt("Enter a number:");
+myButton.addEventListener("click", () => {
+    let userInput = prompt("Enter a number:");
 
-    if (typeof userInput !== "number") {
-        alert("Please enter a number!");
-    } else if (typeof parseInt(userInput) === "number") {
+    if (isNaN(Number(userInput))) {
+        alert("Not a number! Please try again.");
+    } else if (!isNaN(Number(userInput))) {
         function clearContainer() {
             gridContainer.innerHTML = "";
         }
     
         clearContainer();
-
-        gridContainer.setAttribute("style", "height: 960px; width: 960px;");
-
-        for (let i = 0; i < userInput; i++) {
-
-            const row = document.createElement("div");
-            row.classList.add("rowDiv");
-            
-            row.setAttribute("style", "border: 0.25px solid black; display: flex; align-content: stretch; flex: 1;");
-
-            for (let j = 0; j < userInput; j++) {
-                const columnCell = document.createElement("div");
-                columnCell.classList.add("cell");
-                columnCell.setAttribute("style", "border: 0.25px solid black; flex: 1;");
-                row.appendChild(columnCell);
-            }
-
-            gridContainer.appendChild(row);
-        }
     }
+    /*userInput = parseInt(userInput);
+    console.log(userInput);*/
+    
+
+    /*if (typeof userInput !== "number") {
+        alert("Please enter a number!");
+    } else if (typeof userInput=== "number") {
+        function clearContainer() {
+            gridContainer.innerHTML = "";
+        }
+    
+        clearContainer();
+    }*/
 })
